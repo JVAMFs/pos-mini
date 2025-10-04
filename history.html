@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Riwayat Transaksi - POS Mini</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Riwayat Transaksi</h1>
+      <p class="muted">Daftar transaksi yang sudah tersimpan (localStorage)</p>
+    </header>
+
+    <section>
+      <table id="historyTable">
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Produk (ringkasan)</th>
+            <th>Subtotal</th>
+            <th>Diskon</th>
+            <th>Pajak</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+    </section>
+
+    <section class="actions" style="margin-top: 12px">
+      <a href="index.html"><button type="button">Kembali ke POS</button></a>
+      <button id="clearHistoryBtn" type="button">Hapus Semua Riwayat</button>
+    </section>
+
+    <script src="history.js"></script>
+  </body>
+</html>

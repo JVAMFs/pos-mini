@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>POS Mini - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>POS Mini - Portfolio</h1>
+      <p class="muted">
+        Tambah produk → hitung subtotal → diskon & pajak → cetak struk → simpan
+        riwayat
+      </p>
+    </header>
+
+    <section class="form-area">
+      <input id="productName" type="text" placeholder="Nama Produk" />
+      <input
+        id="productPrice"
+        type="number"
+        step="0.01"
+        placeholder="Harga (Rp)"
+      />
+      <input
+        id="productQty"
+        type="number"
+        min="1"
+        value="1"
+        placeholder="Jumlah"
+      />
+      <button id="addBtn" type="button">Tambah</button>
+    </section>
+
+    <section>
+      <table id="cartTable" aria-label="Keranjang">
+        <thead>
+          <tr>
+            <th>Produk</th>
+            <th>Harga</th>
+            <th>Jumlah</th>
+            <th>Total</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="cartBody"></tbody>
+      </table>
+    </section>
+
+    <section class="form-area">
+      <label
+        >Diskon (%) <input id="discount" type="number" value="0" min="0"
+      /></label>
+      <label
+        >Pajak (%) <input id="tax" type="number" value="0" min="0"
+      /></label>
+    </section>
+
+    <section class="totals">
+      <div>Subtotal: Rp <span id="subTotal">0</span></div>
+      <div>Diskon: Rp <span id="discountAmount">0</span></div>
+      <div>Pajak: Rp <span id="taxAmount">0</span></div>
+      <div class="grand">Grand Total: Rp <span id="grandTotal">0</span></div>
+    </section>
+
+    <section class="actions">
+      <button id="resetBtn" type="button">Reset Transaksi</button>
+      <button id="payPrintBtn" type="button">Bayar & Cetak Struk</button>
+      <a href="history.html"
+        ><button type="button">Riwayat Transaksi</button></a
+      >
+    </section>
+
+    <!-- jsPDF CDN (dipakai untuk cetak PDF) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
